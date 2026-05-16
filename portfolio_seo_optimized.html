@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharmendra Sen — Full Stack Developer & SEO Expert | Parbatsar, Rajasthan</title>
+    <meta name="description" content="Full Stack Developer & SEO Expert from Parbatsar, Rajasthan, India. 3+ years building scalable web apps for clients in India, Russia & the USA. React, Next.js, Node.js. Available for freelance worldwide.">
+    <link rel="canonical" href="https://dharmendrasen.in/">
+    <link rel="icon" type="dharmendra.jpeg" href="dharmendra.jpeg/svg+xml,%3Csvg xmlns='dharmendra.jpeg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dharmendrasen.in/">
+    <meta property="og:title" content="Dharmendra Sen — Full Stack Developer & SEO Expert">
+    <meta property="og:description" content="Full Stack Developer from Parbatsar, Rajasthan. 3+ years delivering scalable web solutions for international clients. Available for freelance.">
+    <meta property="og:image" content="https://dharmendrasen.in/dharmendra.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dharmendra Sen — Full Stack Developer & SEO Expert">
+    <meta name="twitter:description" content="Full Stack Developer from Parbatsar, Rajasthan. Building scalable web apps for clients worldwide.">
+    <meta name="twitter:image" content="https://dharmendrasen.in/og-preview.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#7c3aed',
+                        accent: '#0891b2',
+                        light: '#f8fafc',
+                        lighter: '#ffffff',
+                        card: '#ffffff',
+                        surface: '#f1f5f9',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0891b2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .glass-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.1), 0 8px 10px -6px rgba(79, 70, 229, 0.05);
+        }
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+        .tech-icon:hover {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 0 12px rgba(79, 70, 229, 0.2));
+        }
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.15);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #4f46e5, #7c3aed, #0891b2);
+        }
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: -1;
+            animation: float 10s ease-in-out infinite;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .skill-bar {
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            height: 100%;
+            border-radius: 9999px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .section-alt {
+            background-color: #f1f5f9;
+        }
+        .text-muted {
+            color: #64748b;
+        }
+        .border-subtle {
+            border-color: #e2e8f0;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://yourdomain.com/#person",
+          "name": "Dharmendra Sen",
+          "jobTitle": "Full Stack Developer & SEO Expert",
+          "url": "https://yourdomain.com/",
+          "email": "dharmendrasen@youremail.com",
+          "telephone": "+919983730564",
+          "image": "https://yourdomain.com/https://res.cloudinary.com/ditgmp9et/image/upload/q_auto/f_auto/v1778499761/dharmendra_vpgtdq.png",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Parbatsar",
+            "addressRegion": "Rajasthan",
+            "addressCountry": "IN"
+          },
+          "sameAs": [
+            "https://github.com/dharmendrasain935",
+            "https://linkedin.com/in/YOUR_LINKEDIN_HANDLE",
+            "https://twitter.com/YOUR_TWITTER_HANDLE"
+          ],
+          "knowsAbout": [
+            "React", "Next.js", "Node.js", "TypeScript",
+            "MongoDB", "PostgreSQL", "AWS", "Docker",
+            "SEO Optimization", "Technical SEO"
+          ],
+          "description": "Full Stack Developer and SEO Expert from Parbatsar, Rajasthan, India with 3+ years of experience building scalable web applications for international clients."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://yourdomain.com/#website",
+          "url": "https://yourdomain.com/",
+          "name": "Dharmendra Sen — Portfolio",
+          "description": "Portfolio and professional profile of Dharmendra Sen, Full Stack Developer from Parbatsar, Rajasthan",
+          "author": { "@id": "https://yourdomain.com/#person" }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="antialiased">
+    <div class="blob bg-primary w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="blob bg-secondary w-80 h-80 rounded-full top-1/3 right-0 translate-x-1/2" style="animation-delay: 2s;"></div>
+    <div class="blob bg-accent w-72 h-72 rounded-full bottom-0 left-1/3" style="animation-delay: 4s;"></div>
+
+    <nav class="fixed top-0 w-full z-50 glass-card border-b border-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-mono text-xl font-bold gradient-text">&lt;Dev/&gt;</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Home</a>
+                        <a href="#about" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">About</a>
+                        <a href="#experience" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Experience</a>
+                        <a href="#skills" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Skills</a>
+                        <a href="#projects" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Projects</a>
+                        <a href="#services" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Services</a>
+                        <a href="#contact" class="px-4 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-white text-sm font-medium hover:shadow-lg hover:shadow-primary/25 transition-all">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-subtle">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">Experience</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">Projects</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">Services</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 text-center md:text-left scroll-reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Available for freelance work
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-slate-900">
+                    Hey, I am <span class="gradient-text">Dharmendra Sen</span>
+                </h1>
+                <p class="text-2xl font-semibold text-slate-600 mb-8">Full Stack Developer & SEO Expert</p>
+                <p class="text-xl text-muted mb-8 max-w-2xl leading-relaxed">
+                    Passionate about building scalable web applications and creating seamless user experiences. 
+                    I transform complex problems into elegant, efficient solutions using modern technologies.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#projects" class="px-8 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all transform hover:-translate-y-1">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="px-8 py-4 rounded-full border border-slate-300 text-slate-700 font-semibold hover:bg-slate-100 transition-all">
+                        Get In Touch
+                    </a>
+                </div>
+                <div class="mt-12 flex items-center gap-6 justify-center md:justify-start">
+                    <a href="https://github.com/dharmendrasain935" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="Dharmendra Sen GitHub Profile">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/YOUR_LINKEDIN_HANDLE" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="Dharmendra Sen LinkedIn Profile">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://twitter.com/YOUR_TWITTER_HANDLE" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="Dharmendra Sen Twitter Profile">
+                        <i data-lucide="twitter" class="w-6 h-6"></i>
+                    </a>
+                    <a href="mailto:dharmendrasen@youremail.com" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="Email Dharmendra Sen">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center scroll-reveal" style="transition-delay: 0.2s;">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl opacity-20 animate-pulse"></div>
+                    <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-slate-200">
+                        <img src="https://res.cloudinary.com/ditgmp9et/image/upload/q_auto/f_auto/v1778499761/dharmendra_vpgtdq.png" 
+                             alt="Dharmendra Sen — Full Stack Developer and SEO Expert from Parbatsar, Rajasthan, India" 
+                             width="800" height="800"
+                             loading="eager"
+                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
+                        <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+                        <span class="text-sm font-medium text-slate-700">Open to Work</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-slate-400"></i>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">About Me</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="scroll-reveal">
+                    <p class="text-lg text-muted leading-relaxed mb-6">
+                        I am <strong>Dharmendra Sen</strong>, a dedicated full-stack developer with a strong foundation in both frontend and backend technologies. 
+                        My journey in tech started with a curiosity about how things work on the web, which quickly turned into 
+                        a passion for creating digital experiences that make a difference.
+                    </p>
+                    <p class="text-lg text-muted leading-relaxed mb-6">
+                        Since 2023, I have been operating as a freelance Full-Stack Developer, delivering high-performance digital solutions 
+                        for a diverse range of international clients. My work spans across multiple global markets, including successful 
+                        project collaborations in India, Russia, and the USA. I specialize in building responsive, scalable web applications 
+                        that bridge the gap between complex backend logic and intuitive frontend design.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="glass-card p-4 rounded-xl">
+                            <h4 class="text-2xl font-bold gradient-text mb-1">3+</h4>
+                            <p class="text-sm text-muted">Years Experience</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl">
+                            <h4 class="text-2xl font-bold gradient-text mb-1">50+</h4>
+                            <p class="text-sm text-muted">Projects Completed</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl">
+                            <h4 class="text-2xl font-bold gradient-text mb-1">20+</h4>
+                            <p class="text-sm text-muted">Happy Clients</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl">
+                            <h4 class="text-2xl font-bold gradient-text mb-1">100%</h4>
+                            <p class="text-sm text-muted">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-xl font-semibold mb-6 flex items-center gap-2 text-slate-900">
+                            <i data-lucide="code-2" class="w-5 h-5 text-primary"></i>
+                            My Approach
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1 text-slate-800">Clean & Scalable Code</h4>
+                                    <p class="text-sm text-muted">Writing maintainable, modular code that grows with your business</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1 text-slate-800">User-First Design</h4>
+                                    <p class="text-sm text-muted">Creating intuitive interfaces that users love to interact with</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-accent"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1 text-slate-800">Performance Optimized</h4>
+                                    <p class="text-sm text-muted">Ensuring fast load times and smooth interactions across devices</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1 text-slate-800">Continuous Learning</h4>
+                                    <p class="text-sm text-muted">Staying updated with the latest technologies and best practices</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 section-alt">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Experience</h2>
+                <p class="text-muted">My professional journey and key experiences</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+            </div>
+            <div class="relative max-w-3xl mx-auto">
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 timeline-line transform md:-translate-x-1/2"></div>
+
+                <div class="relative mb-12 scroll-reveal">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white transform -translate-x-1/2 mt-1.5 shadow-md"></div>
+                    <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-8 items-center">
+                        <div class="md:text-right">
+                            <span class="text-sm text-primary font-mono font-medium">2025 - Present</span>
+                            <h3 class="text-xl font-bold mt-1 text-slate-900">Senior Full Stack Developer</h3>
+                            <p class="text-muted">Freelance / International Clients</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl mt-2 md:mt-0">
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"></i>
+                                    Delivering high-performance digital solutions for international clients across India, Russia, and USA
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"></i>
+                                    Led architecture and development of scalable enterprise web applications serving global markets
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"></i>
+                                    Optimized application performance achieving 60% faster load times and improved SEO rankings
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">Next.js</span>
+                                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">Node.js</span>
+                                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative mb-12 scroll-reveal">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-white transform -translate-x-1/2 mt-1.5 shadow-md"></div>
+                    <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-8 items-center">
+                        <div class="md:order-2">
+                            <span class="text-sm text-secondary font-mono font-medium">2023 - 2025</span>
+                            <h3 class="text-xl font-bold mt-1 text-slate-900">Full Stack Developer</h3>
+                            <p class="text-muted">Freelance / Remote</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl mt-2 md:mt-0 md:order-1">
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-secondary flex-shrink-0 mt-0.5"></i>
+                                    Built and deployed 20+ client websites and web applications for global clients
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-secondary flex-shrink-0 mt-0.5"></i>
+                                    Specialized in responsive, scalable web applications bridging backend logic and frontend design
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-secondary flex-shrink-0 mt-0.5"></i>
+                                    Collaborated with international teams across different time zones and cultures
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-medium">React</span>
+                                <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-medium">MongoDB</span>
+                                <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-medium">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative scroll-reveal">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-accent border-4 border-white transform -translate-x-1/2 mt-1.5 shadow-md"></div>
+                    <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-8 items-center">
+                        <div class="md:text-right">
+                            <span class="text-sm text-accent font-mono font-medium">2023 - 2024</span>
+                            <h3 class="text-xl font-bold mt-1 text-slate-900">Junior Web Developer</h3>
+                            <p class="text-muted">StartUp Hub</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-xl mt-2 md:mt-0">
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-accent flex-shrink-0 mt-0.5"></i>
+                                    Developed responsive frontend components using React and Tailwind CSS
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-accent flex-shrink-0 mt-0.5"></i>
+                                    Assisted in REST API development and database schema design
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-accent flex-shrink-0 mt-0.5"></i>
+                                    Participated in agile sprints, daily standups, and peer code reviews
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">JavaScript</span>
+                                <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">HTML/CSS</span>
+                                <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">Express</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Technical Skills</h2>
+                <p class="text-muted">Technologies and tools I work with</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="mb-12 scroll-reveal">
+                <h3 class="text-xl font-semibold mb-6 flex items-center gap-2 text-slate-900">
+                    <i data-lucide="layout" class="w-5 h-5 text-primary"></i>
+                    Frontend Development
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors"><span class="text-2xl">⚛️</span></div>
+                        <span class="text-sm font-medium text-slate-700">React</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors"><span class="text-2xl">▲</span></div>
+                        <span class="text-sm font-medium text-slate-700">Next.js</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors"><span class="text-2xl">📘</span></div>
+                        <span class="text-sm font-medium text-slate-700">TypeScript</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-cyan-100 flex items-center justify-center group-hover:bg-cyan-200 transition-colors"><span class="text-2xl">🌊</span></div>
+                        <span class="text-sm font-medium text-slate-700">Tailwind CSS</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors"><span class="text-2xl">🎭</span></div>
+                        <span class="text-sm font-medium text-slate-700">Framer Motion</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center group-hover:bg-yellow-200 transition-colors"><span class="text-2xl">⚡</span></div>
+                        <span class="text-sm font-medium text-slate-700">Vite</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12 scroll-reveal">
+                <h3 class="text-xl font-semibold mb-6 flex items-center gap-2 text-slate-900">
+                    <i data-lucide="server" class="w-5 h-5 text-secondary"></i>
+                    Backend Development
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors"><span class="text-2xl">🟢</span></div>
+                        <span class="text-sm font-medium text-slate-700">Node.js</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors"><span class="text-2xl">🚂</span></div>
+                        <span class="text-sm font-medium text-slate-700">Express</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors"><span class="text-2xl">🐍</span></div>
+                        <span class="text-sm font-medium text-slate-700">Python</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors"><span class="text-2xl">🍃</span></div>
+                        <span class="text-sm font-medium text-slate-700">MongoDB</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors"><span class="text-2xl">🐘</span></div>
+                        <span class="text-sm font-medium text-slate-700">PostgreSQL</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors"><span class="text-2xl">🔥</span></div>
+                        <span class="text-sm font-medium text-slate-700">Firebase</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-reveal">
+                <h3 class="text-xl font-semibold mb-6 flex items-center gap-2 text-slate-900">
+                    <i data-lucide="wrench" class="w-5 h-5 text-accent"></i>
+                    Tools & DevOps
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors"><span class="text-2xl">🐙</span></div>
+                        <span class="text-sm font-medium text-slate-700">Git</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors"><span class="text-2xl">🐳</span></div>
+                        <span class="text-sm font-medium text-slate-700">Docker</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center group-hover:bg-yellow-200 transition-colors"><span class="text-2xl">☁️</span></div>
+                        <span class="text-sm font-medium text-slate-700">AWS</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors"><span class="text-2xl">🖥️</span></div>
+                        <span class="text-sm font-medium text-slate-700">Linux</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors"><span class="text-2xl">🎨</span></div>
+                        <span class="text-sm font-medium text-slate-700">Figma</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors"><span class="text-2xl">🔄</span></div>
+                        <span class="text-sm font-medium text-slate-700">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 section-alt">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Featured Projects</h2>
+                <p class="text-muted">Some of my recent work that showcases my skills</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card glass-card rounded-2xl overflow-hidden scroll-reveal group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" 
+                             alt="E-commerce platform with payment integration built by Dharmendra Sen Full Stack Developer" 
+                             width="800" height="600"
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">E-Commerce Platform</h3>
+                        <p class="text-muted text-sm mb-4">Full-stack online store with payment integration, admin dashboard, and real-time inventory management.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-medium">Next.js</span>
+                            <span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-medium">Stripe</span>
+                            <span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-medium">MongoDB</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/dharmendrasain935/ecommerce-project" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium text-center hover:bg-primary/90 transition-colors">Live Demo</a>
+                            <a href="https://github.com/dharmendrasain935/ecommerce-project" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 text-sm font-medium text-center hover:bg-slate-100 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card rounded-2xl overflow-hidden scroll-reveal group" style="transition-delay: 0.1s;">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" 
+                             alt="Analytics Dashboard with real-time data visualization project by Dharmendra Sen" 
+                             width="800" height="600"
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Analytics Dashboard</h3>
+                        <p class="text-muted text-sm mb-4">Real-time data visualization dashboard with interactive charts, export features, and user role management.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-xs font-medium">React</span>
+                            <span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-xs font-medium">D3.js</span>
+                            <span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-xs font-medium">Node.js</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/dharmendrasain935/analytics-dashboard" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg bg-secondary text-white text-sm font-medium text-center hover:bg-secondary/90 transition-colors">Live Demo</a>
+                            <a href="https://github.com/dharmendrasain935/analytics-dashboard" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 text-sm font-medium text-center hover:bg-slate-100 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card rounded-2xl overflow-hidden scroll-reveal group" style="transition-delay: 0.2s;">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop" 
+                             alt="Social Media App with real-time chat built by Dharmendra Sen Full Stack Developer" 
+                             width="800" height="600"
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Social Media App</h3>
+                        <p class="text-muted text-sm mb-4">Mobile-first social platform with real-time chat, stories, notifications, and AI-powered content recommendations.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-accent/10 text-accent text-xs font-medium">React Native</span>
+                            <span class="px-2 py-1 rounded bg-accent/10 text-accent text-xs font-medium">Socket.io</span>
+                            <span class="px-2 py-1 rounded bg-accent/10 text-accent text-xs font-medium">Firebase</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/dharmendrasain935/social-media-app" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg bg-accent text-white text-sm font-medium text-center hover:bg-accent/90 transition-colors">Live Demo</a>
+                            <a href="https://github.com/dharmendrasain935/social-media-app" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 text-sm font-medium text-center hover:bg-slate-100 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card rounded-2xl overflow-hidden scroll-reveal group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop" 
+                             alt="Task Management System with Kanban boards project by Dharmendra Sen" 
+                             width="800" height="600"
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Task Management System</h3>
+                        <p class="text-muted text-sm mb-4">Collaborative project management tool with Kanban boards, Gantt charts, and team collaboration features.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-medium">Vue.js</span>
+                            <span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-medium">GraphQL</span>
+                            <span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-medium">PostgreSQL</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/dharmendrasain935/task-management" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium text-center hover:bg-primary/90 transition-colors">Live Demo</a>
+                            <a href="https://github.com/dharmendrasain935/task-management" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 text-sm font-medium text-center hover:bg-slate-100 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card rounded-2xl overflow-hidden scroll-reveal group" style="transition-delay: 0.1s;">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop" 
+                             alt="AI Chat Application with NLP capabilities built by Dharmendra Sen" 
+                             width="800" height="600"
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">AI Chat Application</h3>
+                        <p class="text-muted text-sm mb-4">Intelligent chatbot platform with NLP capabilities, multi-language support, and conversation analytics.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-xs font-medium">Python</span>
+                            <span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-xs font-medium">TensorFlow</span>
+                            <span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-xs font-medium">FastAPI</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/dharmendrasain935/ai-chat-app" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg bg-secondary text-white text-sm font-medium text-center hover:bg-secondary/90 transition-colors">Live Demo</a>
+                            <a href="https://github.com/dharmendrasain935/ai-chat-app" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 text-sm font-medium text-center hover:bg-slate-100 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card rounded-2xl overflow-hidden scroll-reveal group" style="transition-delay: 0.2s;">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop" 
+                             alt="DevOps Automation with CI/CD pipelines project by Dharmendra Sen" 
+                             width="800" height="600"
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">DevOps Automation</h3>
+                        <p class="text-muted text-sm mb-4">Infrastructure as Code setup with automated CI/CD pipelines, monitoring, and scalable cloud architecture.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-accent/10 text-accent text-xs font-medium">Terraform</span>
+                            <span class="px-2 py-1 rounded bg-accent/10 text-accent text-xs font-medium">Kubernetes</span>
+                            <span class="px-2 py-1 rounded bg-accent/10 text-accent text-xs font-medium">AWS</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/dharmendrasain935/devops-automation" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg bg-accent text-white text-sm font-medium text-center hover:bg-accent/90 transition-colors">Live Demo</a>
+                            <a href="https://github.com/dharmendrasain935/devops-automation" target="_blank" rel="noopener noreferrer" class="flex-1 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 text-sm font-medium text-center hover:bg-slate-100 transition-colors">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Services</h2>
+                <p class="text-muted">What I can do for you</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl scroll-reveal hover:border-primary/30 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                        <i data-lucide="search" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900">SEO Optimization</h3>
+                    <p class="text-sm text-muted">Comprehensive on-page and off-page SEO strategies to boost your website visibility and organic traffic.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl scroll-reveal hover:border-secondary/30 transition-colors" style="transition-delay: 0.1s;">
+                    <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-secondary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900">Technical SEO</h3>
+                    <p class="text-sm text-muted">Site speed optimization, structured data implementation, crawlability fixes, and Core Web Vitals improvement.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl scroll-reveal hover:border-accent/30 transition-colors" style="transition-delay: 0.2s;">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                        <i data-lucide="file-text" class="w-6 h-6 text-accent"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900">Content Strategy</h3>
+                    <p class="text-sm text-muted">Keyword research, content planning, and SEO-optimized copywriting that ranks and converts visitors.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl scroll-reveal hover:border-primary/30 transition-colors" style="transition-delay: 0.3s;">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-slate-900">SEO Analytics</h3>
+                    <p class="text-sm text-muted">In-depth SEO audits, competitor analysis, and data-driven reporting to track and improve your rankings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 section-alt">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="scroll-reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Get In Touch</h2>
+                    <p class="text-muted mb-8">I am always open to discussing new opportunities and interesting projects. Feel free to reach out!</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                                <i data-lucide="mail" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-muted">Email</p>
+                                <a href="mailto:dharmendrasen@youremail.com" class="text-lg font-medium hover:text-primary transition-colors text-slate-900">dharmendrasen@youremail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
+                                <i data-lucide="message-circle" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-muted">WhatsApp</p>
+                                <a href="https://wa.me/919983730564" target="_blank" rel="noopener noreferrer" class="text-lg font-medium hover:text-green-600 transition-colors text-slate-900">+91 99837 30564</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-secondary"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-muted">Location</p>
+                                <p class="text-lg font-medium text-slate-900">Parbatsar, Rajasthan, India (Available Worldwide Remote)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <p class="text-sm text-muted mb-4">Or connect with me on social media:</p>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/dharmendrasain935" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:bg-slate-100 transition-colors text-slate-600 hover:text-slate-900" aria-label="Dharmendra Sen GitHub">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/YOUR_LINKEDIN_HANDLE" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:bg-slate-100 transition-colors text-slate-600 hover:text-slate-900" aria-label="Dharmendra Sen LinkedIn">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://twitter.com/YOUR_TWITTER_HANDLE" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:bg-slate-100 transition-colors text-slate-600 hover:text-slate-900" aria-label="Dharmendra Sen Twitter">
+                                <i data-lucide="twitter" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://wa.me/919983730564" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:bg-green-100 transition-colors text-green-600" aria-label="WhatsApp Dharmendra Sen">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-reveal" style="transition-delay: 0.2s;">
+                    <form class="glass-card p-8 rounded-2xl space-y-6" onsubmit="event.preventDefault(); alert('Message sent! I will get back to you soon.');">
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-slate-700">Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-slate-700">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-slate-700">Subject</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Project inquiry">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-slate-700">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all transform hover:-translate-y-1">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-slate-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <span class="font-mono text-lg font-bold gradient-text">&lt;Dev/&gt;</span>
+                <span class="text-slate-500 text-sm">Full Stack Developer</span>
+            </div>
+            <p class="text-slate-400 text-sm"> 2026 All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="https://github.com/dharmendrasain935" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="GitHub">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="https://linkedin.com/in/YOUR_LINKEDIN_HANDLE" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <a href="https://wa.me/919983730564" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-green-600 transition-colors" aria-label="WhatsApp">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919983730564" target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform z-50 group">
+        <i data-lucide="message-circle" class="w-7 h-7 text-white"></i>
+        <span class="absolute right-full mr-3 px-3 py-1 bg-slate-800 text-white text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            Chat on WhatsApp
+        </span>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.add('bg-white/90');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.remove('bg-white/90');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
