@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="ctZDMZRm4XXqw3QdW583urDo71u2G2U7NnUTXkG8nMw" />
     <meta name="description" content="Full Stack Developer & SEO Expert from Parbatsar, Rajasthan, India. 3+ years building scalable web apps for clients in India, Russia & the USA. React, Next.js, Node.js. Available for freelance worldwide.">
     <link rel="canonical" href="https://dharmendrasen.in/">
-    <link rel="icon" type="dharmendra.jpeg" href="dharmendra.jpeg/svg+xml,%3Csvg xmlns='dharmendra.jpeg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dharmendrasen.in/">
     <meta property="og:title" content="Dharmendra Sen — Full Stack Developer & SEO Expert">
@@ -113,6 +113,9 @@
         .nav-link:hover::after {
             width: 100%;
         }
+        .nav-link.active::after {
+            width: 100%;
+        }
         .timeline-line {
             background: linear-gradient(to bottom, #4f46e5, #7c3aed, #0891b2);
         }
@@ -146,6 +149,78 @@
         }
         .border-subtle {
             border-color: #e2e8f0;
+        }
+        /* ===== BLOG SECTION STYLES ===== */
+        .blog-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.15);
+        }
+        .blog-card .blog-img-wrapper {
+            overflow: hidden;
+        }
+        .blog-card .blog-img-wrapper img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .blog-card:hover .blog-img-wrapper img {
+            transform: scale(1.08);
+        }
+        .blog-card .read-arrow {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .blog-card:hover .read-arrow {
+            transform: translateX(4px);
+            color: #4f46e5;
+        }
+        .category-pill {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .category-pill:hover {
+            transform: translateY(-2px);
+        }
+        .category-pill.active {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+        .blog-card.hidden-card {
+            display: none;
+        }
+        .blog-card.show-card {
+            animation: cardFadeIn 0.5s ease forwards;
+        }
+        @keyframes cardFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Mobile menu improvements */
+        #mobile-menu {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        #mobile-menu a {
+            transition: all 0.2s ease;
+        }
+        #mobile-menu a:active {
+            background-color: rgba(79, 70, 229, 0.1);
+        }
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
     </style>
     <script type="application/ld+json">
@@ -190,45 +265,66 @@
       ]
     }
     </script>
+<base target="_blank">
 </head>
 <body class="antialiased">
     <div class="blob bg-primary w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
     <div class="blob bg-secondary w-80 h-80 rounded-full top-1/3 right-0 translate-x-1/2" style="animation-delay: 2s;"></div>
     <div class="blob bg-accent w-72 h-72 rounded-full bottom-0 left-1/3" style="animation-delay: 4s;"></div>
 
-    <nav class="fixed top-0 w-full z-50 glass-card border-b border-subtle">
+    <!-- ===== FIXED NAVIGATION ===== -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 glass-card border-b border-subtle transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="font-mono text-xl font-bold gradient-text">&lt;Dev/&gt;</span>
+                    <a href="#home" class="font-mono text-xl font-bold gradient-text hover:opacity-80 transition-opacity">&lt;Dev/&gt;</a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Home</a>
-                        <a href="#about" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">About</a>
-                        <a href="#experience" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Experience</a>
-                        <a href="#skills" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Skills</a>
-                        <a href="#projects" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Projects</a>
-                        <a href="#services" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Services</a>
+                        <a href="#home" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors" data-section="home">Home</a>
+                        <a href="#about" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors" data-section="about">About</a>
+                        <a href="#experience" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors" data-section="experience">Experience</a>
+                        <a href="#skills" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors" data-section="skills">Skills</a>
+                        <a href="#projects" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors" data-section="projects">Projects</a>
+                        <a href="#blog" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors" data-section="blog">Blog</a>
+                        <a href="#services" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors" data-section="services">Services</a>
                         <a href="#contact" class="px-4 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-white text-sm font-medium hover:shadow-lg hover:shadow-primary/25 transition-all">Contact</a>
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Toggle mobile menu">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-subtle">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">Home</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">About</a>
-                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">Experience</a>
-                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">Skills</a>
-                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">Projects</a>
-                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100">Services</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-primary">Contact</a>
+        <!-- ===== MOBILE MENU (FIXED) ===== -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full glass-card border-t border-subtle shadow-xl max-h-[80vh] overflow-y-auto">
+            <div class="px-4 py-4 space-y-1">
+                <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all" data-section="home">
+                    <span class="flex items-center gap-3"><i data-lucide="home" class="w-5 h-5 text-primary/70"></i> Home</span>
+                </a>
+                <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all" data-section="about">
+                    <span class="flex items-center gap-3"><i data-lucide="user" class="w-5 h-5 text-primary/70"></i> About</span>
+                </a>
+                <a href="#experience" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all" data-section="experience">
+                    <span class="flex items-center gap-3"><i data-lucide="briefcase" class="w-5 h-5 text-primary/70"></i> Experience</span>
+                </a>
+                <a href="#skills" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all" data-section="skills">
+                    <span class="flex items-center gap-3"><i data-lucide="code-2" class="w-5 h-5 text-primary/70"></i> Skills</span>
+                </a>
+                <a href="#projects" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all" data-section="projects">
+                    <span class="flex items-center gap-3"><i data-lucide="folder" class="w-5 h-5 text-primary/70"></i> Projects</span>
+                </a>
+                <a href="#blog" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all" data-section="blog">
+                    <span class="flex items-center gap-3"><i data-lucide="book-open" class="w-5 h-5 text-primary/70"></i> Blog</span>
+                </a>
+                <a href="#services" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all" data-section="services">
+                    <span class="flex items-center gap-3"><i data-lucide="layers" class="w-5 h-5 text-primary/70"></i> Services</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-bold text-white bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/25 transition-all mt-2" data-section="contact">
+                    <span class="flex items-center gap-3"><i data-lucide="mail" class="w-5 h-5"></i> Contact Me</span>
+                </a>
             </div>
         </div>
     </nav>
@@ -794,7 +890,133 @@
         </div>
     </section>
 
-    <section id="contact" class="py-24 section-alt">
+    <!-- ===== BLOG / INSIGHTS SECTION ===== -->
+    <section id="blog" class="py-24 section-alt">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12 scroll-reveal">
+                <p class="text-primary font-mono text-sm font-medium tracking-wider uppercase mb-3">My Thoughts & Insights</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Latest Blog Posts</h2>
+                <p class="text-muted max-w-2xl mx-auto">Sharing my expertise in Data Analytics, Web Development, and Freelancing to help you grow your business and skills.</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 scroll-reveal" style="transition-delay: 0.1s;" id="blog-filters">
+                <button class="category-pill active px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 bg-white text-slate-600 hover:border-primary/30" data-filter="all">
+                    All Posts
+                </button>
+                <button class="category-pill px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 bg-white text-slate-600 hover:border-primary/30" data-filter="data-analytics">
+                    <span class="flex items-center gap-2"><i data-lucide="bar-chart-2" class="w-4 h-4"></i> Data Analytics</span>
+                </button>
+                <button class="category-pill px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 bg-white text-slate-600 hover:border-primary/30" data-filter="web-development">
+                    <span class="flex items-center gap-2"><i data-lucide="globe" class="w-4 h-4"></i> Web Development</span>
+                </button>
+                <button class="category-pill px-5 py-2.5 rounded-full text-sm font-medium border border-slate-200 bg-white text-slate-600 hover:border-primary/30" data-filter="freelancing-tips">
+                    <span class="flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4"></i> Freelancing Tips</span>
+                </button>
+            </div>
+
+            <!-- Blog Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
+
+                <!-- Card 1: Data Analytics -->
+                <article class="blog-card glass-card rounded-2xl overflow-hidden scroll-reveal" data-category="data-analytics" style="transition-delay: 0.1s;">
+                    <div class="blog-img-wrapper relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80" 
+                             alt="Power BI Dashboards for Remote Clients - Data Analytics Blog by Dharmendra Sen" 
+                             width="800" height="600"
+                             loading="lazy"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-primary/90 text-white text-xs font-medium backdrop-blur-sm">Data Analytics</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-sm text-muted mb-3">
+                            <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> May 10, 2026</span>
+                            <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                            <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 8 min read</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-slate-900 leading-snug">Mastering Power BI Dashboards for Remote Clients</h3>
+                        <p class="text-sm text-muted mb-4 leading-relaxed">Learn how to build interactive, real-time Power BI dashboards that impress international clients. From DAX formulas to row-level security, this guide covers everything you need.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-primary transition-colors group">
+                            Read Article 
+                            <i data-lucide="arrow-right" class="w-4 h-4 read-arrow"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 2: Web Development -->
+                <article class="blog-card glass-card rounded-2xl overflow-hidden scroll-reveal" data-category="web-development" style="transition-delay: 0.2s;">
+                    <div class="blog-img-wrapper relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80" 
+                             alt="Building Mobile-Responsive Websites with High Performance - Web Development Blog by Dharmendra Sen" 
+                             width="800" height="600"
+                             loading="lazy"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-secondary/90 text-white text-xs font-medium backdrop-blur-sm">Web Development</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-sm text-muted mb-3">
+                            <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> April 28, 2026</span>
+                            <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                            <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 6 min read</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-slate-900 leading-snug">Building Mobile-Responsive Websites with High Performance</h3>
+                        <p class="text-sm text-muted mb-4 leading-relaxed">A deep dive into Core Web Vitals, lazy loading, image optimization, and responsive design patterns that keep users engaged and Google happy on every device.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-primary transition-colors group">
+                            Read Article 
+                            <i data-lucide="arrow-right" class="w-4 h-4 read-arrow"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 3: Freelancing Tips -->
+                <article class="blog-card glass-card rounded-2xl overflow-hidden scroll-reveal" data-category="freelancing-tips" style="transition-delay: 0.3s;">
+                    <div class="blog-img-wrapper relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop&q=80" 
+                             alt="How to Structure Freelance Contracts for Foreign Clients - Freelancing Blog by Dharmendra Sen" 
+                             width="800" height="600"
+                             loading="lazy"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-accent/90 text-white text-xs font-medium backdrop-blur-sm">Freelancing Tips</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-sm text-muted mb-3">
+                            <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> April 15, 2026</span>
+                            <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                            <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 10 min read</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-slate-900 leading-snug">How to Structure Freelance Contracts for Foreign Clients</h3>
+                        <p class="text-sm text-muted mb-4 leading-relaxed">Protect your work and get paid on time. This guide covers milestone-based payments, IP clauses, timezone communication, and legal considerations for cross-border freelancing.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-primary transition-colors group">
+                            Read Article 
+                            <i data-lucide="arrow-right" class="w-4 h-4 read-arrow"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- View All CTA -->
+            <div class="text-center mt-12 scroll-reveal">
+                <a href="#" class="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-primary/20 text-primary font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+                    View All Articles
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="scroll-reveal">
@@ -909,21 +1131,48 @@
     </a>
 
     <script>
+        // Initialize Lucide icons
         lucide.createIcons();
 
+        // ===== MOBILE MENU =====
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        let menuOpen = false;
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            }
+            lucide.createIcons();
         });
 
+        // Close mobile menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
+                menuOpen = false;
                 mobileMenu.classList.add('hidden');
+                mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
             });
         });
 
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (menuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                menuOpen = false;
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
+            }
+        });
+
+        // ===== SCROLL REVEAL =====
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -940,29 +1189,92 @@
 
         document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
 
+        // ===== NAVBAR SCROLL EFFECT =====
         const nav = document.querySelector('nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 nav.classList.add('shadow-lg');
-                nav.classList.add('bg-white/90');
+                nav.classList.add('bg-white/95');
             } else {
                 nav.classList.remove('shadow-lg');
-                nav.classList.remove('bg-white/90');
+                nav.classList.remove('bg-white/95');
             }
         });
 
+        // ===== SMOOTH SCROLL =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const navHeight = nav.offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
+
+        // ===== SCROLL SPY - ACTIVE NAV LINK =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function updateActiveNav() {
+            const scrollPos = window.scrollY + nav.offsetHeight + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active', 'text-slate-900');
+                        link.classList.add('text-slate-600');
+                        if (link.getAttribute('data-section') === sectionId) {
+                            link.classList.add('active', 'text-slate-900');
+                            link.classList.remove('text-slate-600');
+                        }
+                    });
+                    mobileNavLinks.forEach(link => {
+                        link.classList.remove('bg-primary/10', 'text-primary');
+                        if (link.getAttribute('data-section') === sectionId) {
+                            link.classList.add('bg-primary/10', 'text-primary');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav(); // Run once on load
+
+        // ===== BLOG CATEGORY FILTER =====
+        const filterButtons = document.querySelectorAll('.category-pill');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active state on buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                blogCards.forEach(card => {
+                    card.classList.remove('show-card');
+                    card.classList.add('hidden-card');
+
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.classList.remove('hidden-card');
+                        card.classList.add('show-card');
+                    }
+                });
+            });
+        });
     </script>
 </body>
-</html>
+</html></html>
