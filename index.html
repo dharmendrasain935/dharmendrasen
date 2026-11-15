@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4f46e5">
     <title>Dharmendra Sen — Web Developer & Data Analyst in Parbatsar, Rajasthan</title>
     <meta name="google-site-verification" content="ctZDMZRm4XXqw3QdW583urDo71u2G2U7NnUTXkG8nMw" />
     <meta name="description" content="Hire Dharmendra Sen — Professional Web Developer & Data Analyst in Parbatsar, Rajasthan. 3+ years building websites, web apps & Power BI dashboards for clients in India, Russia & USA. React, Next.js, Node.js. Available for freelance.">
@@ -63,10 +64,21 @@
         }
     </script>
     <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        html, body {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
         body {
             background-color: #f8fafc;
             color: #1e293b;
             overflow-x: hidden;
+        }
+        /* offset anchored sections below the fixed navbar */
+        section[id] {
+            scroll-margin-top: 5rem;
         }
         .gradient-text {
             background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0891b2 100%);
@@ -77,6 +89,7 @@
         .glass-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(226, 232, 240, 0.8);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
@@ -222,6 +235,12 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
+        @media (max-width: 640px) {
+            .blob {
+                filter: blur(60px);
+                opacity: 0.12;
+            }
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -331,13 +350,13 @@
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Toggle mobile menu">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Toggle mobile menu" aria-expanded="false">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <!-- ===== MOBILE MENU (FIXED) ===== -->
+        <!-- ===== MOBILE MENU ===== -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full glass-card border-t border-subtle shadow-xl max-h-[80vh] overflow-y-auto">
             <div class="px-4 py-4 space-y-1">
                 <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all" data-section="home">
@@ -369,21 +388,21 @@
     </nav>
 
     <section id="home" class="min-h-screen flex items-center justify-center relative pt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12 py-16">
             <div class="flex-1 text-center md:text-left scroll-reveal">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-6">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse flex-shrink-0"></span>
                     Available for freelance work
                 </div>
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-slate-900">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-slate-900 leading-tight">
                     Hey, I am <span class="gradient-text">Dharmendra Sen</span>
                 </h1>
-                <p class="text-2xl font-semibold text-slate-600 mb-2">Full Stack Developer & SEO Expert</p>
-                <p class="text-lg text-slate-500 mb-8 flex items-center justify-center md:justify-start gap-2">
-                    <i data-lucide="map-pin" class="w-5 h-5 text-primary"></i>
+                <p class="text-xl sm:text-2xl font-semibold text-slate-600 mb-2">Full Stack Developer & SEO Expert</p>
+                <p class="text-base sm:text-lg text-slate-500 mb-8 flex items-center justify-center md:justify-start gap-2">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-primary flex-shrink-0"></i>
                     <span>Parbatsar, Rajasthan, India — Available Worldwide</span>
                 </p>
-                <p class="text-xl text-muted mb-8 max-w-2xl leading-relaxed">
+                <p class="text-base sm:text-xl text-muted mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0">
                     Passionate about building scalable web applications and creating seamless user experiences. 
                     I transform complex problems into elegant, efficient solutions using modern technologies.
                 </p>
@@ -396,16 +415,16 @@
                     </a>
                 </div>
                 <div class="mt-12 flex items-center gap-6 justify-center md:justify-start">
-                    <a href="https://github.com/dharmendrasain935" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="Dharmendra Sen GitHub Profile">
+                    <a href="https://github.com/dharmendrasain935" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors p-2" aria-label="Dharmendra Sen GitHub Profile">
                         <i data-lucide="github" class="w-6 h-6"></i>
                     </a>
-                    <a href="https://in.linkedin.com/in/dharmendra-sen-b28103102" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="Dharmendra Sen LinkedIn Profile">
+                    <a href="https://in.linkedin.com/in/dharmendra-sen-b28103102" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors p-2" aria-label="Dharmendra Sen LinkedIn Profile">
                         <i data-lucide="linkedin" class="w-6 h-6"></i>
                     </a>
-                    <a href="https://twitter.com/dharmendrasen" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="Dharmendra Sen Twitter Profile">
+                    <a href="https://twitter.com/dharmendrasen" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors p-2" aria-label="Dharmendra Sen Twitter Profile">
                         <i data-lucide="twitter" class="w-6 h-6"></i>
                     </a>
-                    <a href="mailto:dharmendrasen@youremail.com" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="Email Dharmendra Sen">
+                    <a href="mailto:dharmendrasen@youremail.com" class="text-slate-400 hover:text-slate-900 transition-colors p-2" aria-label="Email Dharmendra Sen">
                         <i data-lucide="mail" class="w-6 h-6"></i>
                     </a>
                 </div>
@@ -413,7 +432,7 @@
             <div class="flex-1 flex justify-center scroll-reveal" style="transition-delay: 0.2s;">
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl opacity-20 animate-pulse"></div>
-                    <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-slate-200">
+                    <div class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl shadow-slate-200">
                         <img src="https://res.cloudinary.com/ditgmp9et/image/upload/q_auto/f_auto/v1778499761/dharmendra_vpgtdq.png" 
                              alt="Dharmendra Sen — Full Stack Developer and SEO Expert from Parbatsar, Rajasthan, India" 
                              width="800" height="800"
@@ -427,7 +446,7 @@
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
             <i data-lucide="chevron-down" class="w-6 h-6 text-slate-400"></i>
         </div>
     </section>
@@ -451,7 +470,7 @@
                         project collaborations in India, Russia, and the USA. I specialize in building responsive, scalable web applications 
                         that bridge the gap between complex backend logic and intuitive frontend design.
                     </p>
-                    <div class="grid grid-cols-2 gap-6 mt-8">
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6 mt-8">
                         <div class="glass-card p-4 rounded-xl">
                             <h4 class="text-2xl font-bold gradient-text mb-1">3+</h4>
                             <p class="text-sm text-muted">Years Experience</p>
@@ -642,7 +661,7 @@
                     <i data-lucide="layout" class="w-5 h-5 text-primary"></i>
                     Frontend Development
                 </h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
                         <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors"><span class="text-2xl">⚛️</span></div>
                         <span class="text-sm font-medium text-slate-700">React</span>
@@ -675,7 +694,7 @@
                     <i data-lucide="server" class="w-5 h-5 text-secondary"></i>
                     Backend Development
                 </h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
                         <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors"><span class="text-2xl">🟢</span></div>
                         <span class="text-sm font-medium text-slate-700">Node.js</span>
@@ -708,7 +727,7 @@
                     <i data-lucide="wrench" class="w-5 h-5 text-accent"></i>
                     Tools & DevOps
                 </h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     <div class="glass-card p-4 rounded-xl flex flex-col items-center gap-3 tech-icon cursor-pointer group">
                         <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors"><span class="text-2xl">🐙</span></div>
                         <span class="text-sm font-medium text-slate-700">Git</span>
@@ -737,14 +756,89 @@
             </div>
         </div>
     </section>
-     <section id="services" class="py-24">
+
+    <!-- ===== PROJECTS SECTION (was missing — nav link was dead) ===== -->
+    <section id="projects" class="py-24 section-alt">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Projects</h2>
+                <p class="text-muted">A selection of work I have delivered for clients worldwide</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <article class="project-card glass-card rounded-2xl overflow-hidden scroll-reveal">
+                    <div class="blog-img-wrapper relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80"
+                             alt="Power BI analytics dashboard project by Dharmendra Sen"
+                             width="800" height="600" loading="lazy"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary/90 text-white text-xs font-medium">Data Analytics</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2 text-slate-900">Sales Intelligence Dashboard</h3>
+                        <p class="text-sm text-muted mb-4 leading-relaxed">Interactive Power BI dashboard with real-time KPIs, DAX-driven insights and row-level security, built for a US retail client.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">Power BI</span>
+                            <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">DAX</span>
+                            <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">SQL</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass-card rounded-2xl overflow-hidden scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="blog-img-wrapper relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80"
+                             alt="E-commerce web application project by Dharmendra Sen"
+                             width="800" height="600" loading="lazy"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-secondary/90 text-white text-xs font-medium">Web Development</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2 text-slate-900">E-Commerce Platform</h3>
+                        <p class="text-sm text-muted mb-4 leading-relaxed">Full-stack online store with payment gateway, inventory management and admin analytics. Optimized to a 1.1s mobile LCP.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-medium">Next.js</span>
+                            <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-medium">Node.js</span>
+                            <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-medium">MongoDB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass-card rounded-2xl overflow-hidden scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="blog-img-wrapper relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&q=80"
+                             alt="SEO and business website project by Dharmendra Sen"
+                             width="800" height="600" loading="lazy"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent/90 text-white text-xs font-medium">SEO + Web</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2 text-slate-900">Business Website & SEO Revamp</h3>
+                        <p class="text-sm text-muted mb-4 leading-relaxed">Rebuilt a service business website with technical SEO, structured data and Core Web Vitals fixes — organic traffic up 120% in 4 months.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">React</span>
+                            <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">Technical SEO</span>
+                            <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">Schema</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Services</h2>
                 <p class="text-muted">What I can do for you</p>
                 <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="glass-card p-6 rounded-2xl scroll-reveal hover:border-primary/30 transition-colors">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                         <i data-lucide="search" class="w-6 h-6 text-primary"></i>
@@ -903,7 +997,6 @@
         </div>
     </section>
 
-    
     <!-- ===== ARTICLE VIEWER (Hidden by default) ===== -->
     <section id="article-viewer" class="py-24 hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -918,7 +1011,7 @@
                 <meta itemprop="author" content="Dharmendra Sen">
                 <meta itemprop="datePublished" content="2026-05-10">
                 <header class="mb-10">
-                    <div class="flex items-center gap-3 mb-4">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
                         <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">Data Analytics</span>
                         <span class="text-sm text-muted flex items-center gap-1"><i data-lucide="calendar" class="w-4 h-4"></i> May 10, 2026</span>
                         <span class="text-sm text-muted flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> 8 min read</span>
@@ -926,7 +1019,7 @@
                     <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" itemprop="headline">Mastering Power BI Dashboards for Remote Clients</h1>
                     <p class="text-xl text-muted leading-relaxed" itemprop="description">Learn how to build interactive, real-time Power BI dashboards that impress international clients. From DAX formulas to row-level security, this guide covers everything you need.</p>
                 </header>
-                <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed" itemprop="articleBody">
+                <div class="max-w-none text-slate-700 leading-relaxed" itemprop="articleBody">
                     <p class="mb-6">Working with remote clients across different time zones and cultures has taught me one thing: <strong>data storytelling is universal</strong>. Whether you are presenting to a startup in Bangalore or an enterprise in Moscow, a well-crafted Power BI dashboard speaks louder than a hundred spreadsheets.</p>
 
                     <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">1. Understanding Client Requirements Before Touching Power BI</h2>
@@ -978,7 +1071,7 @@
                 <meta itemprop="author" content="Dharmendra Sen">
                 <meta itemprop="datePublished" content="2026-04-28">
                 <header class="mb-10">
-                    <div class="flex items-center gap-3 mb-4">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
                         <span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-medium">Web Development</span>
                         <span class="text-sm text-muted flex items-center gap-1"><i data-lucide="calendar" class="w-4 h-4"></i> April 28, 2026</span>
                         <span class="text-sm text-muted flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> 6 min read</span>
@@ -986,7 +1079,7 @@
                     <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" itemprop="headline">Building Mobile-Responsive Websites with High Performance</h1>
                     <p class="text-xl text-muted leading-relaxed" itemprop="description">A deep dive into Core Web Vitals, lazy loading, image optimization, and responsive design patterns that keep users engaged and Google happy on every device.</p>
                 </header>
-                <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed" itemprop="articleBody">
+                <div class="max-w-none text-slate-700 leading-relaxed" itemprop="articleBody">
                     <p class="mb-6">In 2026, <strong>over 65% of web traffic in India comes from mobile devices</strong>. If your website is not mobile-first, you are losing more than half your potential customers. As a freelance web developer serving clients in India, Russia, and the USA, I have learned that performance is not a feature — it is the foundation.</p>
 
                     <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">1. Core Web Vitals: The Three Metrics That Matter</h2>
@@ -1028,7 +1121,7 @@
                 <meta itemprop="author" content="Dharmendra Sen">
                 <meta itemprop="datePublished" content="2026-04-15">
                 <header class="mb-10">
-                    <div class="flex items-center gap-3 mb-4">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
                         <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">Freelancing Tips</span>
                         <span class="text-sm text-muted flex items-center gap-1"><i data-lucide="calendar" class="w-4 h-4"></i> April 15, 2026</span>
                         <span class="text-sm text-muted flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> 10 min read</span>
@@ -1036,7 +1129,7 @@
                     <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" itemprop="headline">How to Structure Freelance Contracts for Foreign Clients</h1>
                     <p class="text-xl text-muted leading-relaxed" itemprop="description">Protect your work and get paid on time. This guide covers milestone-based payments, IP clauses, timezone communication, and legal considerations for cross-border freelancing.</p>
                 </header>
-                <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed" itemprop="articleBody">
+                <div class="max-w-none text-slate-700 leading-relaxed" itemprop="articleBody">
                     <p class="mb-6">After 3+ years of freelancing for clients in India, Russia, and the USA, I have learned that <strong>a good contract is worth more than a great portfolio</strong>. It protects your income, defines boundaries, and sets professional expectations from day one.</p>
 
                     <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">1. Always Use Milestone-Based Payments</h2>
@@ -1084,7 +1177,6 @@
         </div>
     </section>
 
-
     <section id="contact" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12">
@@ -1094,17 +1186,17 @@
 
                     <div class="space-y-6">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                                 <i data-lucide="mail" class="w-6 h-6 text-primary"></i>
                             </div>
-                            <div>
+                            <div class="min-w-0">
                                 <p class="text-sm text-muted">Email</p>
-                                <a href="mailto:dharmendrasen@youremail.com" class="text-lg font-medium hover:text-primary transition-colors text-slate-900">dharmendrasen@youremail.com</a>
+                                <a href="mailto:dharmendrasen@youremail.com" class="text-base sm:text-lg font-medium hover:text-primary transition-colors text-slate-900 break-all">dharmendrasen@youremail.com</a>
                             </div>
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
                                 <i data-lucide="message-circle" class="w-6 h-6 text-green-600"></i>
                             </div>
                             <div>
@@ -1115,12 +1207,12 @@
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
                                 <i data-lucide="map-pin" class="w-6 h-6 text-secondary"></i>
                             </div>
                             <div>
                                 <p class="text-sm text-muted">Location</p>
-                                <p class="text-lg font-medium text-slate-900">Parbatsar, Rajasthan, India (Available Worldwide Remote)</p>
+                                <p class="text-base sm:text-lg font-medium text-slate-900">Parbatsar, Rajasthan, India (Available Worldwide Remote)</p>
                             </div>
                         </div>
                     </div>
@@ -1145,14 +1237,14 @@
                 </div>
 
                 <div class="scroll-reveal" style="transition-delay: 0.2s;">
-                    <form class="glass-card p-8 rounded-2xl space-y-6" onsubmit="event.preventDefault(); alert('Message sent! I will get back to you soon.');">
+                    <form class="glass-card p-6 sm:p-8 rounded-2xl space-y-6" onsubmit="event.preventDefault(); alert('Message sent! I will get back to you soon.');">
                         <div>
                             <label class="block text-sm font-medium mb-2 text-slate-700">Name</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Your name">
+                            <input type="text" required class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Your name">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2 text-slate-700">Email</label>
-                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="your@email.com">
+                            <input type="email" required class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="your@email.com">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2 text-slate-700">Subject</label>
@@ -1160,7 +1252,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2 text-slate-700">Message</label>
-                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+                            <textarea rows="4" required class="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Tell me about your project..."></textarea>
                         </div>
                         <button type="submit" class="w-full py-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all transform hover:-translate-y-1">
                             Send Message
@@ -1175,9 +1267,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-2">
                 <span class="font-mono text-lg font-bold gradient-text">&lt;Dev/&gt;</span>
-                <span class="text-slate-500 text-sm">Full Stack Developer</span>
+                <span class="text-slate-500 text-sm">Dharmendra Sen — Full Stack Developer</span>
             </div>
-            <p class="text-slate-400 text-sm"> 2026 All rights reserved.</p>
+            <p class="text-slate-400 text-sm">&copy; 2026 Dharmendra Sen. All rights reserved.</p>
             <div class="flex gap-4">
                 <a href="https://github.com/dharmendrasain935" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-900 transition-colors" aria-label="GitHub">
                     <i data-lucide="github" class="w-5 h-5"></i>
@@ -1193,9 +1285,9 @@
     </footer>
 
     <a href="https://wa.me/919983730564" target="_blank" rel="noopener noreferrer" 
-       class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform z-50 group">
+       class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform z-50 group" aria-label="Chat on WhatsApp">
         <i data-lucide="message-circle" class="w-7 h-7 text-white"></i>
-        <span class="absolute right-full mr-3 px-3 py-1 bg-slate-800 text-white text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+        <span class="absolute right-full mr-3 px-3 py-1 bg-slate-800 text-white text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden sm:block">
             Chat on WhatsApp
         </span>
     </a>
@@ -1209,17 +1301,19 @@
         const mobileMenu = document.getElementById('mobile-menu');
         let menuOpen = false;
 
+        function setMenuIcon() {
+            mobileMenuBtn.innerHTML = menuOpen
+                ? '<i data-lucide="x" class="w-6 h-6"></i>'
+                : '<i data-lucide="menu" class="w-6 h-6"></i>';
+            mobileMenuBtn.setAttribute('aria-expanded', menuOpen ? 'true' : 'false');
+            lucide.createIcons();
+        }
+
         mobileMenuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             menuOpen = !menuOpen;
-            if (menuOpen) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
-            } else {
-                mobileMenu.classList.add('hidden');
-                mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-            }
-            lucide.createIcons();
+            mobileMenu.classList.toggle('hidden', !menuOpen);
+            setMenuIcon();
         });
 
         // Close mobile menu on link click
@@ -1227,8 +1321,7 @@
             link.addEventListener('click', () => {
                 menuOpen = false;
                 mobileMenu.classList.add('hidden');
-                mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-                lucide.createIcons();
+                setMenuIcon();
             });
         });
 
@@ -1237,8 +1330,7 @@
             if (menuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                 menuOpen = false;
                 mobileMenu.classList.add('hidden');
-                mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-                lucide.createIcons();
+                setMenuIcon();
             }
         });
 
@@ -1260,7 +1352,7 @@
         document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
 
         // ===== NAVBAR SCROLL EFFECT =====
-        const nav = document.querySelector('nav');
+        const nav = document.getElementById('main-nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 nav.classList.add('shadow-lg');
@@ -1271,14 +1363,16 @@
             }
         });
 
-        // ===== SMOOTH SCROLL =====
+        // ===== SMOOTH SCROLL (fixed: only intercept same-page # links) =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                const target = document.querySelector(href);
                 if (target) {
+                    e.preventDefault();
                     const navHeight = nav.offsetHeight;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight + 1;
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
@@ -1368,8 +1462,8 @@
                 targetArticle.classList.remove('hidden');
             }
 
-            // Scroll to top of article viewer
-            articleViewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Scroll to top of page so the article starts below the fixed nav
+            window.scrollTo({ top: 0, behavior: 'smooth' });
 
             // Update URL hash without triggering scroll
             history.pushState(null, null, '#' + articleId);
@@ -1388,7 +1482,9 @@
             blogSection.classList.remove('hidden');
 
             // Scroll back to blog section
-            blogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const navHeight = nav.offsetHeight;
+            const targetPosition = blogSection.getBoundingClientRect().top + window.pageYOffset - navHeight + 1;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
 
             // Clear hash
             history.pushState(null, null, window.location.pathname + window.location.search);
@@ -1405,17 +1501,16 @@
             if (hash && hash.startsWith('article-')) {
                 showArticle(hash);
             } else {
-                hideArticleViewer();
+                articleViewer.classList.add('hidden');
+                blogSection.classList.remove('hidden');
             }
         });
 
         // On page load, check if URL has article hash
-        window.addEventListener('DOMContentLoaded', function() {
-            const hash = window.location.hash.replace('#', '');
-            if (hash && hash.startsWith('article-')) {
-                showArticle(hash);
-            }
-        });
+        const initialHash = window.location.hash.replace('#', '');
+        if (initialHash && initialHash.startsWith('article-')) {
+            showArticle(initialHash);
+        }
     </script>
 </body>
-</html>   
+</html>
