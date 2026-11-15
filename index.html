@@ -76,6 +76,16 @@
             color: #1e293b;
             overflow-x: hidden;
         }
+        html, body { overflow-x: clip; }
+        img { max-width: 100%; height: auto; }
+        code { word-break: break-word; }
+        /* Fluid typography so text scales smoothly on every screen */
+        .hero-title { font-size: clamp(2rem, 8vw, 4.5rem); line-height: 1.1; }
+        .hero-sub { font-size: clamp(1.05rem, 3.5vw, 1.5rem); }
+        .section-title { font-size: clamp(1.75rem, 5vw, 2.5rem); }
+        @media (max-width: 480px) {
+            #mobile-menu .px-4.py-4 { padding: 0.75rem 1rem; }
+        }
         /* offset anchored sections below the fixed navbar */
         section[id] {
             scroll-margin-top: 5rem;
@@ -337,8 +347,8 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#home" class="font-mono text-xl font-bold gradient-text hover:opacity-80 transition-opacity">&lt;Dev/&gt;</a>
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
+                <div class="hidden lg:block">
+                    <div class="ml-6 lg:ml-10 flex items-baseline space-x-5 lg:space-x-8">
                         <a href="#home" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors" data-section="home">Home</a>
                         <a href="#about" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors" data-section="about">About</a>
                         <a href="#experience" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors" data-section="experience">Experience</a>
@@ -349,7 +359,7 @@
                         <a href="#contact" class="px-4 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-white text-sm font-medium hover:shadow-lg hover:shadow-primary/25 transition-all">Contact</a>
                     </div>
                 </div>
-                <div class="md:hidden">
+                <div class="lg:hidden">
                     <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Toggle mobile menu" aria-expanded="false">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
@@ -357,7 +367,7 @@
             </div>
         </div>
         <!-- ===== MOBILE MENU ===== -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full glass-card border-t border-subtle shadow-xl max-h-[80vh] overflow-y-auto">
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-16 left-0 right-0 w-full glass-card border-t border-subtle shadow-xl max-h-[80vh] overflow-y-auto">
             <div class="px-4 py-4 space-y-1">
                 <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all" data-section="home">
                     <span class="flex items-center gap-3"><i data-lucide="home" class="w-5 h-5 text-primary/70"></i> Home</span>
@@ -394,10 +404,10 @@
                     <span class="w-2 h-2 rounded-full bg-primary animate-pulse flex-shrink-0"></span>
                     Available for freelance work
                 </div>
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-slate-900 leading-tight">
+                <h1 class="hero-title font-bold tracking-tight mb-6 text-slate-900">
                     Hey, I am <span class="gradient-text">Dharmendra Sen</span>
                 </h1>
-                <p class="text-xl sm:text-2xl font-semibold text-slate-600 mb-2">Full Stack Developer & SEO Expert</p>
+                <p class="hero-sub font-semibold text-slate-600 mb-2">Full Stack Developer & SEO Expert</p>
                 <p class="text-base sm:text-lg text-slate-500 mb-8 flex items-center justify-center md:justify-start gap-2">
                     <i data-lucide="map-pin" class="w-5 h-5 text-primary flex-shrink-0"></i>
                     <span>Parbatsar, Rajasthan, India — Available Worldwide</span>
@@ -454,7 +464,7 @@
     <section id="about" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">About Me</h2>
+                <h2 class="section-title font-bold mb-4 text-slate-900">About Me</h2>
                 <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -542,7 +552,7 @@
     <section id="experience" class="py-24 section-alt">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Experience</h2>
+                <h2 class="section-title font-bold mb-4 text-slate-900">Experience</h2>
                 <p class="text-muted">My professional journey and key experiences</p>
                 <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
             </div>
@@ -551,7 +561,7 @@
 
                 <div class="relative mb-12 scroll-reveal">
                     <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white transform -translate-x-1/2 mt-1.5 shadow-md"></div>
-                    <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-12 items-center">
                         <div class="md:text-right">
                             <span class="text-sm text-primary font-mono font-medium">2025 - Present</span>
                             <h3 class="text-xl font-bold mt-1 text-slate-900">Senior Full Stack Developer</h3>
@@ -583,7 +593,7 @@
 
                 <div class="relative mb-12 scroll-reveal">
                     <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-white transform -translate-x-1/2 mt-1.5 shadow-md"></div>
-                    <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-12 items-center">
                         <div class="md:order-2">
                             <span class="text-sm text-secondary font-mono font-medium">2023 - 2025</span>
                             <h3 class="text-xl font-bold mt-1 text-slate-900">Full Stack Developer</h3>
@@ -615,7 +625,7 @@
 
                 <div class="relative scroll-reveal">
                     <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-accent border-4 border-white transform -translate-x-1/2 mt-1.5 shadow-md"></div>
-                    <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-12 items-center">
                         <div class="md:text-right">
                             <span class="text-sm text-accent font-mono font-medium">2023 - 2024</span>
                             <h3 class="text-xl font-bold mt-1 text-slate-900">Junior Web Developer</h3>
@@ -651,7 +661,7 @@
     <section id="skills" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Technical Skills</h2>
+                <h2 class="section-title font-bold mb-4 text-slate-900">Technical Skills</h2>
                 <p class="text-muted">Technologies and tools I work with</p>
                 <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
             </div>
@@ -761,7 +771,7 @@
     <section id="projects" class="py-24 section-alt">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Projects</h2>
+                <h2 class="section-title font-bold mb-4 text-slate-900">Projects</h2>
                 <p class="text-muted">A selection of work I have delivered for clients worldwide</p>
                 <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
             </div>
@@ -834,7 +844,7 @@
     <section id="services" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Services</h2>
+                <h2 class="section-title font-bold mb-4 text-slate-900">Services</h2>
                 <p class="text-muted">What I can do for you</p>
                 <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
             </div>
@@ -877,7 +887,7 @@
             <!-- Section Header -->
             <div class="text-center mb-12 scroll-reveal">
                 <p class="text-primary font-mono text-sm font-medium tracking-wider uppercase mb-3">My Thoughts & Insights</p>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Latest Blog Posts</h2>
+                <h2 class="section-title font-bold mb-4 text-slate-900">Latest Blog Posts</h2>
                 <p class="text-muted max-w-2xl mx-auto">Sharing my expertise in Data Analytics, Web Development, and Freelancing to help you grow your business and skills.</p>
                 <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
             </div>
@@ -1019,7 +1029,7 @@
                     <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" itemprop="headline">Mastering Power BI Dashboards for Remote Clients</h1>
                     <p class="text-xl text-muted leading-relaxed" itemprop="description">Learn how to build interactive, real-time Power BI dashboards that impress international clients. From DAX formulas to row-level security, this guide covers everything you need.</p>
                 </header>
-                <div class="max-w-none text-slate-700 leading-relaxed" itemprop="articleBody">
+                <div class="max-w-none text-slate-700 leading-relaxed overflow-hidden" itemprop="articleBody">
                     <p class="mb-6">Working with remote clients across different time zones and cultures has taught me one thing: <strong>data storytelling is universal</strong>. Whether you are presenting to a startup in Bangalore or an enterprise in Moscow, a well-crafted Power BI dashboard speaks louder than a hundred spreadsheets.</p>
 
                     <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">1. Understanding Client Requirements Before Touching Power BI</h2>
@@ -1079,7 +1089,7 @@
                     <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" itemprop="headline">Building Mobile-Responsive Websites with High Performance</h1>
                     <p class="text-xl text-muted leading-relaxed" itemprop="description">A deep dive into Core Web Vitals, lazy loading, image optimization, and responsive design patterns that keep users engaged and Google happy on every device.</p>
                 </header>
-                <div class="max-w-none text-slate-700 leading-relaxed" itemprop="articleBody">
+                <div class="max-w-none text-slate-700 leading-relaxed overflow-hidden" itemprop="articleBody">
                     <p class="mb-6">In 2026, <strong>over 65% of web traffic in India comes from mobile devices</strong>. If your website is not mobile-first, you are losing more than half your potential customers. As a freelance web developer serving clients in India, Russia, and the USA, I have learned that performance is not a feature — it is the foundation.</p>
 
                     <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">1. Core Web Vitals: The Three Metrics That Matter</h2>
@@ -1129,7 +1139,7 @@
                     <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" itemprop="headline">How to Structure Freelance Contracts for Foreign Clients</h1>
                     <p class="text-xl text-muted leading-relaxed" itemprop="description">Protect your work and get paid on time. This guide covers milestone-based payments, IP clauses, timezone communication, and legal considerations for cross-border freelancing.</p>
                 </header>
-                <div class="max-w-none text-slate-700 leading-relaxed" itemprop="articleBody">
+                <div class="max-w-none text-slate-700 leading-relaxed overflow-hidden" itemprop="articleBody">
                     <p class="mb-6">After 3+ years of freelancing for clients in India, Russia, and the USA, I have learned that <strong>a good contract is worth more than a great portfolio</strong>. It protects your income, defines boundaries, and sets professional expectations from day one.</p>
 
                     <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">1. Always Use Milestone-Based Payments</h2>
@@ -1181,7 +1191,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="scroll-reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Get In Touch</h2>
+                    <h2 class="section-title font-bold mb-4 text-slate-900">Get In Touch</h2>
                     <p class="text-muted mb-8">I am always open to discussing new opportunities and interesting projects. Feel free to reach out!</p>
 
                     <div class="space-y-6">
@@ -1191,7 +1201,7 @@
                             </div>
                             <div class="min-w-0">
                                 <p class="text-sm text-muted">Email</p>
-                                <a href="mailto:dharmendrasen@youremail.com" class="text-base sm:text-lg font-medium hover:text-primary transition-colors text-slate-900 break-all">dharmendrasen@youremail.com</a>
+                                <a href="mailto:dharmendrasen@youremail.com" class="text-base sm:text-lg font-medium hover:text-primary transition-colors text-slate-900 break-all min-w-0">dharmendrasen@youremail.com</a>
                             </div>
                         </div>
 
@@ -1285,7 +1295,7 @@
     </footer>
 
     <a href="https://wa.me/919983730564" target="_blank" rel="noopener noreferrer" 
-       class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform z-50 group" aria-label="Chat on WhatsApp">
+       class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-12 h-12 sm:w-14 sm:h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform z-50 group" aria-label="Chat on WhatsApp">
         <i data-lucide="message-circle" class="w-7 h-7 text-white"></i>
         <span class="absolute right-full mr-3 px-3 py-1 bg-slate-800 text-white text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden sm:block">
             Chat on WhatsApp
